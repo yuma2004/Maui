@@ -446,10 +446,9 @@ body {
 
 /* 新しい画像セクションのスタイル */
 .responsive-image-section {
-    width: 100vw;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
+    width: 100%;
+    max-width: 440px;
+    margin: 0 auto;
     background-color: #FFFFFF;
 }
 
@@ -459,15 +458,12 @@ body {
 
 .new-responsive-img {
     width: 100%;
+    max-width: 440px;
     height: auto;
     display: block;
 }
 
 @media screen and (max-width: 440px) {
-    .responsive-image-container {
-        width: 100%;
-    }
-
     .new-responsive-img {
         width: 100%;
     }
@@ -935,6 +931,19 @@ body {
     .contact-form-section {
         transform: scale(0.8);
     }
+}
+
+/* 新しい画像セクションのスタイル（レスポンシブ対応） */
+.new-image-section {
+    width: 100%;
+    max-width: 440px;
+    margin: 0 auto;
+}
+
+.new-image-section img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 
