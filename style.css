@@ -3,6 +3,7 @@ body {
     max-width: 440px;
     margin: 0 auto;
     position: relative;
+    font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", sans-serif;
 }
 
 /* ヘッダーのスタイル */
@@ -207,15 +208,9 @@ body {
     display: inline-block;
 }
 
-.highlight-text::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 100%;
-    height: 10px;
+.highlight-text {
     background: linear-gradient(transparent 60%, #FFE45E 40%);
-    z-index: -1;
+    padding: 0 2px;
 }
 
 .main-text {
@@ -494,6 +489,12 @@ body {
     position: relative;
 }
 
+.section-title img {
+    width: 100%;
+    max-width: 440px;
+    height: auto;
+}
+
 .cards-grid {
     display: grid;
     grid-template-columns: repeat(2, 182px);
@@ -501,6 +502,7 @@ body {
     width: fit-content;
     justify-content: center;
     position: relative;
+    padding: 0 10px;
 }
 
 /* グリッド内のロゴスタイル */
@@ -607,21 +609,18 @@ body {
 @media screen and (max-width: 440px) {
     .grid-section {
         padding: 15px 0;
-        transform: scale(0.9);
-        transform-origin: top center;
     }
 
     .cards-grid {
-        gap: 14px;
+        grid-template-columns: repeat(2, minmax(150px, 1fr));
+        gap: 10px;
+        width: 100%;
     }
 
     .card {
+        width: 100%;
+        height: 60px;
         padding: 6px;
-    }
-
-    .card-logo {
-        width: 62px;
-        height: 62px;
     }
 
     .title-text {
@@ -630,7 +629,7 @@ body {
 
     .info {
         font-size: 6px;
-        line-height: 1.2;
+        line-height: 1.1;
     }
 
     .card-right {
@@ -639,48 +638,66 @@ body {
     }
 
     .grid-logo {
-        width: 62px;
-        height: 62px;
+        width: 60px;
+        height: 60px;
+        right: 10px;
     }
 }
 
-@media screen and (max-width: 400px) {
-    .grid-section {
-        transform: scale(0.8);
-    }
-
+@media screen and (max-width: 375px) {
     .cards-grid {
-        gap: 12px;
+        grid-template-columns: repeat(2, minmax(140px, 1fr));
+        gap: 8px;
     }
 
-    .grid-logo {
-        width: 55px;
+    .card {
         height: 55px;
-    }
-}
-
-@media screen and (max-width: 360px) {
-    .grid-section {
-        transform: scale(0.7);
+        padding: 5px;
     }
 
-    .cards-grid {
-        gap: 10px;
+    .title-text {
+        font-size: 8px;
+    }
+
+    .info {
+        font-size: 5px;
+        line-height: 1.1;
+    }
+
+    .card-right {
+        width: 34px;
+        height: 34px;
     }
 
     .grid-logo {
-        width: 48px;
-        height: 48px;
+        width: 50px;
+        height: 50px;
     }
 }
 
 @media screen and (max-width: 320px) {
-    .grid-section {
-        transform: scale(0.65);
+    .cards-grid {
+        grid-template-columns: repeat(2, minmax(130px, 1fr));
+        gap: 6px;
     }
 
-    .cards-grid {
-        gap: 8px;
+    .card {
+        height: 50px;
+        padding: 4px;
+    }
+
+    .title-text {
+        font-size: 7px;
+    }
+
+    .info {
+        font-size: 4px;
+        line-height: 1.1;
+    }
+
+    .card-right {
+        width: 30px;
+        height: 30px;
     }
 
     .grid-logo {
@@ -706,40 +723,19 @@ body {
     object-fit: contain;
 }
 
-@media screen and (max-width: 440px) {
-    .logo-section {
-        transform: scale(0.9);
-        transform-origin: top center;
-    }
-}
-
-@media screen and (max-width: 400px) {
-    .logo-section {
-        transform: scale(0.8);
-    }
-}
-
-@media screen and (max-width: 360px) {
-    .logo-section {
-        transform: scale(0.7);
-    }
-}
-
-@media screen and (max-width: 320px) {
-    .logo-section {
-        transform: scale(0.65);
-    }
-}
-
 /* 問い合わせフォームセクション */
 .contact-form-section {
     width: 100%;
     max-width: 440px;
     margin: 0 auto;
-    padding: 40px 20px;
-    background-color: #E5F6FB;
+    padding: 40px 20px 60px;
+    background-image: url('img/Rectangle.png');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
     border-radius: 40px;
     position: relative;
+    overflow: hidden;
 }
 
 .contact-form-container {
@@ -747,6 +743,7 @@ body {
     max-width: 400px;
     margin: 0 auto;
     position: relative;
+    padding: 0 10px;
 }
 
 .contact-title {
@@ -756,6 +753,13 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.contact-title img {
+    width: 300px;
+    height: auto;
+    display: block;
+    margin: 20px 0;
 }
 
 .contact-subtitle {
@@ -865,10 +869,10 @@ body {
 
 @media screen and (max-width: 440px) {
     .contact-form-section {
-        padding: 30px 15px;
+        padding: 30px 15px 50px;
         border-radius: 30px;
-        transform: scale(0.9);
-        transform-origin: top center;
+        background-size: 100% 100%;
+        width: 100%;
     }
 
     .checkbox-group {
@@ -921,17 +925,15 @@ body {
     }
 }
 
-@media screen and (max-width: 375px) {
+/* @media screen and (max-width: 375px) {
     .contact-form-section {
-        transform: scale(0.85);
     }
 }
 
 @media screen and (max-width: 320px) {
     .contact-form-section {
-        transform: scale(0.8);
     }
-}
+} */
 
 /* 新しい画像セクションのスタイル（レスポンシブ対応） */
 .new-image-section {
@@ -944,6 +946,10 @@ body {
     width: 100%;
     height: auto;
     display: block;
+}
+
+.section-title {
+    padding: 10px; /* すこしパディングを追加 */
 }
 
 
